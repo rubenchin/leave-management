@@ -68,14 +68,14 @@ namespace leave_management.Controllers
         public ActionResult ListEmployees()
         {
             var Employees = _userManager.GetUsersInRoleAsync("Employee").Result;
-            var model = _mapper.Map<List<EmployeeVm>>(Employees);
+            var model = _mapper.Map<List<EmployeeVM>>(Employees);
             return View(model);
         }
 
         // GET: LeaveAllocation/Details/5
         public ActionResult Details(string id)
         {
-            var employee = _mapper.Map<EmployeeVm>(_userManager.FindByIdAsync(id).Result);
+            var employee = _mapper.Map<EmployeeVM>(_userManager.FindByIdAsync(id).Result);
             var allocations = _mapper.Map<List<LeaveAllocationVM>>(_leaveallocationrepo.GetLeaveAllocationsByEmployee(id));
             var model = new ViewAllocationsVM { Employee = employee, LeaveAllocations = allocations };
             return View(model);

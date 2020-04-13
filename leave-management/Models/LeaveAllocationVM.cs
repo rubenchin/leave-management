@@ -13,7 +13,7 @@ namespace leave_management.Models
         public int NumberOfDays { get; set; }
         public DateTime DateCreated { get; set; }
         public int Period { get; set; }
-        public EmployeeVm Employee { get; set; }
+        public EmployeeVM Employee { get; set; }
         public string EmployeeId { get; set; }
         public LeaveTypeVM LeaveType { get; set; }
         public int LeaveTypeId { get; set; }
@@ -29,7 +29,7 @@ namespace leave_management.Models
     public class EditLeaveAllocationVM
     {
         public int Id { get; set; }
-        public EmployeeVm Employee { get; set; }
+        public EmployeeVM Employee { get; set; }
         public string EmployeeId { get; set; }
 
         public int NumberOfDays { get; set; }
@@ -38,7 +38,7 @@ namespace leave_management.Models
 
     public class ViewAllocationsVM
     {
-        public EmployeeVm Employee { get; set; }
+        public EmployeeVM Employee { get; set; }
         public string EmployeeId { get; set; }
         public List<LeaveAllocationVM> LeaveAllocations { get; set; }
     }
